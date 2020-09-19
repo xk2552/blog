@@ -17,11 +17,11 @@ const Header = () => (
           </Menu.Item>
           <Menu.Item key="video">
             <Icon type="youtube" />
-            视频
+            文章
           </Menu.Item>
           <Menu.Item key="life">
             <Icon type="smile" />
-            生活
+            说说
           </Menu.Item>
         </Menu>
       </Col>
