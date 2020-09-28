@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from 'next/link'
-import { Row, Col, List, Icon } from "antd";
+import { Row, Col, List } from "antd";
+import { CalendarOutlined, ContainerOutlined, EyeOutlined } from '@ant-design/icons'
 import Header from "../components/Header";
 import Author from "../components/Author";
 import Advert from "../components/Advert";
@@ -31,9 +32,9 @@ const Home = (list) => {
                   </Link>
                 </div>
                 <div className="list-icon">
-                  <span><Icon type="calendar" /> {item.addTime}</span>
-                  <span><Icon type="folder" /> {item.typeName}</span>
-                  <span><Icon type="fire" /> {item.view_count}</span>
+                  <span><CalendarOutlined />{item.addTime}</span>
+                  <span><ContainerOutlined />{item.typeName}</span>
+                  <span><EyeOutlined />{item.view_count}</span>
                 </div>
                 <div className="list-context">{item.introduce}</div>
               </List.Item>

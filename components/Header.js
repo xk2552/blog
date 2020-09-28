@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/components/header.css";
-import { Row, Col, Menu, Icon } from "antd";
+import { Row, Col, Menu } from "antd";
+import { HomeOutlined, AreaChartOutlined, ContainerOutlined } from '@ant-design/icons';
 
 const Header = () => (
   <div className="header">
@@ -12,15 +13,15 @@ const Header = () => (
       <Col className="memu-div" xs={0} sm={0} md={14} lg={8} xl={6}>
         <Menu mode="horizontal">
           <Menu.Item key="home">
-            <Icon type="home" />
+            <HomeOutlined />
             首页
           </Menu.Item>
-          <Menu.Item key="video">
-            <Icon type="youtube" />
+          <Menu.Item key="article">
+            <AreaChartOutlined />
             文章
           </Menu.Item>
           <Menu.Item key="life">
-            <Icon type="smile" />
+            <ContainerOutlined />
             说说
           </Menu.Item>
         </Menu>
