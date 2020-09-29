@@ -63,7 +63,7 @@ const Detail = (props) => {
             </div>
             <div>
               <div className="detailed-title">
-                React实战视频教程-技术胖Blog开发(更新08集)
+                React实战视频教程
                 </div>
               <div className="list-icon center">
                 <span><CalendarOutlined /> 2019-06-28</span>

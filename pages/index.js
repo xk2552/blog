@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from 'next/link'
 import { Row, Col, List } from "antd";
@@ -9,9 +9,31 @@ import Advert from "../components/Advert";
 import Footer from "../components/Footer";
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
+import marked from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/monokai-sublime.css';
 
 const Home = (list) => {
   const [mylist, setMylist] = useState(list.data)
+
+  useEffect(()=>{
+    setMylist(list.data)
+  })
+
+  const renderer = new marked.Renderer()
+
+  marked.setOptions({
+    renderer: renderer,
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: false,
+    smartLists: true,
+    highlight: function (code) {
+      return hljs.highlightAuto(code).value
+    }
+  })
 
   return (
     <>
@@ -37,7 +59,9 @@ const Home = (list) => {
                   <span><ContainerOutlined />{item.typeName}</span>
                   <span><EyeOutlined />{item.view_count}</span>
                 </div>
-                <div className="list-context">{item.introduce}</div>
+                <div className="list-context"
+                  dangerouslySetInnerHTML={{__html:marked(item.introduce)}}
+                ></div>
               </List.Item>
             )}
           />
